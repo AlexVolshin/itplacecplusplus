@@ -16,12 +16,12 @@ struct Animal;
 struct Person
 {
     const char* name;
-	const int age;
+    const int age;
 };
 
 void hard_work();
 void chicken_and_egg();
-void pets( bool flag = true );
+void pets();
 
 void hard_work()
 {
@@ -36,8 +36,8 @@ void hard_work()
 
 void chicken_and_egg()
 {
-    //using Chicken;
-    //typedef Zoo::Egg Egg;
+    using Zoo::Chicken;
+    typedef Zoo::Egg Egg;
 	Chicken chicken;
 	Egg egg;
 	chicken.creator = &egg;
@@ -54,7 +54,7 @@ void chicken_and_egg()
 
 
 
-void pets([[maybe_unused]] bool flag)
+void pets()
 {
 	using namespace Zoo;
 	Cat cat;
@@ -69,9 +69,9 @@ void pets([[maybe_unused]] bool flag)
 
 int main( [[maybe_unused]] int argc, [[maybe_unused]] char* argv[] )
 {
-//	Type type = argc ? Person : Animal;
-//	if( Person == type )
-//        Person fry = { "Fry" , 26 };
+    Type type = argc ? Person : Animal;
+    if( Person == type )
+        [[maybe_unused]] struct Person fry = { "Fry" , 26 };
 
     hard_work();
     chicken_and_egg();

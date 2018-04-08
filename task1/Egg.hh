@@ -3,6 +3,8 @@
 
 #include <cstdlib>
 
+namespace Zoo {
+
 class Chicken;
 
 class Egg {
@@ -13,5 +15,7 @@ public:
         return creator;
     }
 };
+
+}
 
 #endif //EGG_H
