@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.11)
+project(task1)
+file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cc" "${CMAKE_CURRENT_SOURCE_DIR}/*.hh")
+add_executable(${PROJECT_NAME} ${SOURCES})
+target_compile_options(${PROJECT_NAME} PRIVATE "/std:c++latest")
