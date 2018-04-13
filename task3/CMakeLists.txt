@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.11)
+project(task3)
+file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
+add_executable(${PROJECT_NAME} ${SOURCES})
+target_compile_options(${PROJECT_NAME} PRIVATE "/std:c++latest")
+add_definitions(${PROJECT_NAME} "/D_CRT_SECURE_NO_WARNINGS")
